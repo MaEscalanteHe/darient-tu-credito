@@ -19,9 +19,6 @@ class Bank(models.Model):
     def __str__(self):
         return self.name
 
-
-
-
 class Client(models.Model):
     TYPES_OF_CLIENTS = [
         ('N', 'Natural'),
@@ -44,11 +41,7 @@ class Client(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
-
-
+        
 class Credit(models.Model):
     TYPES_OF_CREDITS = [
         ('AUT', 'Automotriz'),
