@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'tu_credito.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tuCreditoDB',
-        'USER': 'admin',
-        'PASSWORD': 'admin_password',
+        'NAME': 'tucredito',
+        'USER': 'tucredito',
+        'PASSWORD': 'tucredito_password123',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
