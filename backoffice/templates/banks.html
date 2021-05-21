@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div class="container text-center mb-5">
+        <h1 class="display-4">Bancos</h1>
+    </div>  
+
+    <div class="container text-center mb-5">
+        <a href="{% url 'addBank' %}" class="btn btn-success">Agregar banco</a>
+    </div>
+
+    <div class="container text-center">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID del Banco</th>
+                    <th scope="col">Nombre</th>
+                    <th scope='col'>Direccion</th>
+                    <th scope='col'>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bank in banks %}
+                <tr>
+                    <th scope='row'> {{ bank.id }}</th>
+                    <td>{{ bank.name }}</td>
+                    <td>{{ bank.address }}</td>
+                    <td>{{ bank.get_type_display }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

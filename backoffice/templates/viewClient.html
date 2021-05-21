@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div class="container text-center mb-5">
+        <h1 class="display-4 mb-5">{{ client.name }}</h1>
+        <p>Fecha de nacimiento: {{ client.birthday }}</p>
+        <p>Edad: {{ client.age }}</p>
+        <p>Nacionalidad: {{ client.nationality }}</p>
+        <p>Direccion de habitación: {{ client.address }}</p>
+        <p>Correo electronico: {{ client.email }}</p>
+        <p>Télefono: {{ client.phone }}</p>
+        <p>Tipo de persona: {{ client.get_type_display }}</p>
+        <p>Banco asociado: {{ client.bank.name }}</p>
+    </div>  
+
+    <div class="container text-center mt-5">
+        <a href="{% url 'clients' %}" class="btn btn-warning">Volver atrás</a>
+    </div>
+
+{% endblock %}

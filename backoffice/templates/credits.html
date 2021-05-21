@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div class="container text-center mb-5">
+        <h1 class="display-4">Creditos</h1>
+    </div>  
+
+    <div class="container text-center mb-5">
+        <a href="{% url 'addCredit' %}" class="btn btn-success">Agregar credito</a>
+    </div>
+
+    <div class="container text-center">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID del Credito</th>
+                    <th scope="col">Nombre del cliente</th>
+                    <th scope='col'>Descripción</th>
+                    <th scope='col'>Pago mínimo ($)</th>
+                    <th scope='col'>Pago máximo ($)</th>
+                    <th scope='col'>Plazo en meses</th>
+                    <th scope='col'>Fecha del credito</th>
+                    <th scope='col'>Banco</th>
+                    <th scope='col'>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for credit in credits %}
+                <tr>
+                    <th scope='row'> {{ credit.id }}</th>
+                    <td>{{ credit.client.name }}</td>
+                    <td>{{ credit.description }}</td>
+                    <td>{{ credit.minPayment }}</td>
+                    <td>{{ credit.maxPayment }}</td>
+                    <td>{{ credit.creditMonths }}</td>
+                    <td>{{ credit.registryDate }}</td>
+                    <td>{{ credit.bank }}</td>
+                    <td>{{ credit.get_type_display }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
